@@ -10,25 +10,23 @@ func main() {
 	fmt.Println("***Brute Force Calculator #Hashcat***")
 
 	fmt.Print("Enter the speed in hashes per second: ")
-	var speed int
+	var speed int64
 	fmt.Scanln(&speed)
 
 	fmt.Print("Enter the length of the password: ")
 	var length int
 	fmt.Scanln(&length)
 
-	fmt.Print("Choose from the following options: \n1. Numbers only \n2. Letters only(lower) \n3. Letters only(upper) \n4. Letters only(both upper and lower) \n5. Letters and numbers(lower) \n6. Letters and numbers(upper) \n7. Letters and numbers(both upper and lower) \n OR Add number of combinations by yourself! \nEnter your choice: ")
-	var choice int
+	fmt.Print("Choose from the following options: \n1. Numbers only \n2. Letters only(lower) \n3. Letters only(upper) \n4. Letters only(both upper and lower) \n5. Letters and numbers(lower) \n6. Letters and numbers(upper) \n7. Letters and numbers(both upper and lower) \n8. Add number of combinations by yourself \nEnter your choice: ")
+	var choice int64
 	fmt.Scanln(&choice)
 
-	var combinations int
+	var combinations int64
 	if choice > 7 {
 		fmt.Println("You chose to add number of combinations by yourself!")
-		combinations = choice
-		for i := 1; i < length; i++ {
-			combinations = combinations * choice
-		}
 
+		fmt.Print("Enter the number of combinations: ")
+		fmt.Scanln(&combinations)
 		fmt.Println("There are", combinations, "possible combinations")
 
 		time := combinations / speed
@@ -237,7 +235,7 @@ func main() {
 		}
 	}
 	for {
-		fmt.Println("Do you want to try again? (y/n) OR Do you want to change the hashing speed? (s)")
+		fmt.Print("Do you want to try again? (y/n) OR Do you want to change the hashing speed? (s): ")
 		var answer string
 		fmt.Scanln(&answer)
 

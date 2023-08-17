@@ -17,11 +17,36 @@ func main() {
 	var length int
 	fmt.Scanln(&length)
 
-	fmt.Print("Choose from the following options: \n1. Numbers only \n2. Letters only(lower) \n3. Letters only(upper) \n4. Letters only(both upper and lower) \n5. Letters and numbers(lower) \n6. Letters and numbers(upper) \n7. Letters and numbers(both upper and lower) \n Enter your choice: ")
+	fmt.Print("Choose from the following options: \n1. Numbers only \n2. Letters only(lower) \n3. Letters only(upper) \n4. Letters only(both upper and lower) \n5. Letters and numbers(lower) \n6. Letters and numbers(upper) \n7. Letters and numbers(both upper and lower) \n OR Add number of combinations by yourself! \nEnter your choice: ")
 	var choice int
 	fmt.Scanln(&choice)
 
 	var combinations int
+	if choice > 7 {
+		fmt.Println("You chose to add number of combinations by yourself!")
+		combinations = choice
+		for i := 1; i < length; i++ {
+			combinations = combinations * choice
+		}
+
+		fmt.Println("There are", combinations, "possible combinations")
+
+		time := combinations / speed
+		minutes := time / 60
+		if minutes != 0 {
+			fmt.Println("It will take", minutes, "minutes to brute force this password")
+		}
+
+		hours := time / 3600
+		if hours != 0 {
+			fmt.Println("It will take", hours, "hours to brute force this password")
+		}
+
+		days := hours / 24
+		if days != 0 {
+			fmt.Println("That is", days, "days")
+		}
+	}
 
 	if choice == 1 {
 

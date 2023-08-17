@@ -7,17 +7,17 @@ import (
 
 func main() {
 
-	fmt.Println("Brute Force Calculator #Hashcat")
+	fmt.Println("***Brute Force Calculator #Hashcat***")
 
-	fmt.Println("Enter the speed in hashes per second:")
+	fmt.Print("Enter the speed in hashes per second: ")
 	var speed int
 	fmt.Scanln(&speed)
 
-	fmt.Println("Enter the length of the password:")
+	fmt.Print("Enter the length of the password: ")
 	var length int
 	fmt.Scanln(&length)
 
-	fmt.Println("Choose from the following options: \n1. Numbers only \n2. Letters only(lower) \n3. Letters only(upper) \n4. Letters only(both upper and lower) \n5. Letters and numbers(lower) \n6. Letters and numbers(upper) \n7. Letters and numbers(both upper and lower)")
+	fmt.Print("Choose from the following options: \n1. Numbers only \n2. Letters only(lower) \n3. Letters only(upper) \n4. Letters only(both upper and lower) \n5. Letters and numbers(lower) \n6. Letters and numbers(upper) \n7. Letters and numbers(both upper and lower) \n Enter your choice: ")
 	var choice int
 	fmt.Scanln(&choice)
 

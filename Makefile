@@ -3,8 +3,8 @@
 build:
 	@echo "Building app..."
 	@go mod tidy
-	@go build -o bin/main main.go
+	@go build -o bin/app main.go
 
 run:
 	@echo "Running app..."
-	@./bin/main
+	@./bin/app
